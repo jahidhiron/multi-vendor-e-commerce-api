@@ -1,0 +1,2302 @@
+{
+	"info": {
+		"_postman_id": "b493b6df-ea67-495e-9d1c-792806490a22",
+		"name": "RISH SHOP API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3378045"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Customer\",\r\n    \"lastName\": \"Two\",\r\n    \"email\": \"c2@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"role\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "email-verification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"namehiron.96@gmail.com\",\r\n    \"token\": \"c2b55ee5-cebe-457c-bc58-06fdbcb225b9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/email-verification",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"email-verification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend-email-verification-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"namehiron.96@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/resend-email-verification-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"resend-email-verification-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"123456\"\r\n}\r\n// {\r\n//     \"email\": \"hironse.96@gmail.com\",\r\n//     \"password\": \"123456\"\r\n// }\r\n// {\r\n//     \"email\": \"c2@gmail.com\",\r\n//     \"password\": \"123456\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signin",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "current-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlciBPbmUiLCJlbWFpbCI6ImphaGlkMUB5b3BtYWlsLmNvbSIsImlkIjoyLCJpYXQiOjE3MTEwMDUxNzQsImV4cCI6MTcxMTAwODc3NCwiYXVkIjoiMDBhZjcyOTYtY2EzZi00YzNiLTlmMGYtMDM4YWE3MzEwODUwIiwiaXNzIjoiUHJlY3RpY2UgU2VydmVyIn0.iEKG5hNXDdktA4ozihC1YhZxghZmzHC6bTF-pcVa5N4; refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlciBPbmUiLCJlbWFpbCI6ImphaGlkMUB5b3BtYWlsLmNvbSIsImlkIjoyLCJpYXQiOjE3MTEwMDUxNzQsImV4cCI6MTcxMTAwOTE3NCwiYXVkIjoiMDBhZjcyOTYtY2EzZi00YzNiLTlmMGYtMDM4YWE3MzEwODUwIiwiaXNzIjoiUHJlY3RpY2UgU2VydmVyIn0.PD7rWW41FFcYx3_oHl0FvDY53cZ4bEXpCH_UkCUfAjU",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-lang-id",
+								"value": "jp",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/current-user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"current-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlciBPbmUiLCJlbWFpbCI6ImphaGlkMUB5b3BtYWlsLmNvbSIsImlkIjoyLCJpYXQiOjE3MTEwMDUxNzQsImV4cCI6MTcxMTAwODc3NCwiYXVkIjoiMDBhZjcyOTYtY2EzZi00YzNiLTlmMGYtMDM4YWE3MzEwODUwIiwiaXNzIjoiUHJlY3RpY2UgU2VydmVyIn0.iEKG5hNXDdktA4ozihC1YhZxghZmzHC6bTF-pcVa5N4; refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVXNlciBPbmUiLCJlbWFpbCI6ImphaGlkMUB5b3BtYWlsLmNvbSIsImlkIjoyLCJpYXQiOjE3MTEwMDUxNzQsImV4cCI6MTcxMTAwOTE3NCwiYXVkIjoiMDBhZjcyOTYtY2EzZi00YzNiLTlmMGYtMDM4YWE3MzEwODUwIiwiaXNzIjoiUHJlY3RpY2UgU2VydmVyIn0.PD7rWW41FFcYx3_oHl0FvDY53cZ4bEXpCH_UkCUfAjU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/refresh-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"namehiron.96@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/forgot-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"namehiron.96@gmail.com\",\r\n    \"token\": \"e130acdd-8ef1-4780-8546-7d794d4eef82\",\r\n    \"password\": \"555555\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/reset-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-lang-id",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"555555\",\r\n    \"newPassword\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/change-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-lang-id",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/user-status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"user-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-vendor-info",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-lang-id",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\": \"Test Vendor Company\",\r\n    \"companyEmail\": \"support@v1.com\",\r\n    \"officeAddress\": \"3692 Pine Street, Coronation, Alberta\",\r\n    \"companyPhoto\": \"http://localhost:8003/uploads/vendors/vendor-1.png\",\r\n    \"officePhone\": \"14035788097\",\r\n    \"tssaAuthorizationNumber\": \"HJHS78545621\",\r\n    \"tssaProLeUrl\": \"https://www.google.com\",\r\n    \"tssaAuthorizationStartDate\": \"08-02-2022\",\r\n    \"tssaAuthorizationExpiryDate\": \"08-02-2028\",\r\n    \"hraiAuthorizationNumber\": \"OLKSH78954123\",\r\n    \"hraiProLeUrl\": \"https://www.google.com\",\r\n    \"hraiAuthorizationStartDate\": \"06-03-2021\",\r\n    \"hraiAuthorizationExpiryDate\": \"06-03-2029\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/update-vendor-info/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"update-vendor-info",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-vendor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-lang-id",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/verify-vendor/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"verify-vendor",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    \"limit\": 4,\r\n    \"all\": true,\r\n    // \"q\": \"Mike\",\r\n    // \"active\": true,\r\n    \"role\": \"vendor\", // or \"admin\" or \"customer\"\r\n    \"verified\": true,\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"createdAt\",\r\n            \"order\": \"asc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 2,\r\n    \"limit\": 4,\r\n    \"all\": true,\r\n    \"q\": \"Mike\",\r\n    \"active\": true,\r\n    \"role\": \"vendor\", // or \"admin\" or \"customer\"\r\n    \"verified\": true,\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"createdAt\",\r\n            \"order\": \"asc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/detail/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"detail",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 2,\r\n    \"limit\": 4,\r\n    \"all\": true,\r\n    \"q\": \"Mike\",\r\n    \"active\": true,\r\n    \"role\": \"vendor\", // or \"admin\" or \"customer\"\r\n    \"verified\": true,\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"createdAt\",\r\n            \"order\": \"asc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user1@yopmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 1,\r\n    \"limit\": 2,\r\n    // \"all\": true,\r\n    // \"q\": \"Category 1\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Category 1\",\r\n    \"description\": \"Description 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Category 1 updated\",\r\n    \"description\": \"Description 1 updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "file",
+			"item": [
+				{
+					"name": "upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/nid-front-min.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/files",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"files"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "sub-category",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 1,\r\n    \"limit\": 20,\r\n    \"all\": true,\r\n    // \"q\": \"Lennox\",\r\n    // \"category\": \"air-conditioners\", // or \"category\": 1,\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sub-categories/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sub-categories",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/sub-categories/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sub-categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sub category 1\",\r\n    \"categoryId\": 1,\r\n    \"description\": \"Description 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sub-categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sub-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sub category 1 updated\",\r\n    \"categoryId\": 2,\r\n    \"description\": \"Description 1 updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sub-categories/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sub-categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/sub-categories/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sub-categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 5,\r\n    \"all\": true,\r\n    // \"q\": \"Heat Pumps\",\r\n    // \"status\": \"published\",\r\n    // \"category\": \"air-conditioners\", // or \"category\": 1,\r\n    // \"subCategory\": \"air-conditioners-lennox\", // or \"subCategory\": 1,\r\n    // \"size\": \"S\",\r\n    // \"color\": \"White\",\r\n    // \"weight\": \"25-30kg\",\r\n    // \"length\": \"0-3\",\r\n    // \"height\": \"0-3\",\r\n    // \"width\": \"0-3\",\r\n    // \"stockStatus\": \"InStock\", // or \"stockStatus\": \"OutOfStock\",\r\n    // \"price\": \"301-400\",\r\n    // \"type\": \"Official\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "public-list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 5,\r\n    // \"all\": true,\r\n    // \"q\": \"Heat Pumps\",\r\n    // \"status\": \"published\",\r\n    // \"category\": \"air-conditioners\", // or \"category\": 1,\r\n    // \"subCategory\": \"air-conditioners-lennox\", // or \"subCategory\": 1,\r\n    // \"size\": \"S\",\r\n    // \"color\": \"White\",\r\n    // \"weight\": \"25-30kg\",\r\n    // \"length\": \"0-3\",\r\n    // \"height\": \"0-1.5\",\r\n    // \"width\": \"0-1.5\",\r\n    // \"stockStatus\": \"InStock\", // or \"stockStatus\": \"OutOfStock\",\r\n    // \"price\": \"301-400\",\r\n    // \"type\": \"Office\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/public-list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"public-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/34",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "public-detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/public/product-one",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"public",
+								"product-one"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/stat",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"stat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Product Three\",\r\n    \"subTitle\": \"Product Three sub title\",\r\n    \"description\": \"Description Three\",\r\n    \"status\": \"unpublished\",\r\n    \"thumbnail\": \"http://localhost:8003/uploads/products/product-1.jpg\",\r\n    \"originCountry\": \"USA\",\r\n    \"material\": \"Iron\",\r\n    \"categoryId\": 2,\r\n    \"subCategoryId\": 4,\r\n    \"discountPercentage\": 5,\r\n    \"type\": \"Official\",\r\n    \"images\": [\"http://localhost:8003/uploads/products/product-2.jpg\", \"http://localhost:8003/uploads/products/product-2.jpg\", \"http://localhost:8003/uploads/products/product-3.jpg\"],\r\n    \"variant\": [\r\n        {\r\n            \"sku\": \"SKU1234\",\r\n            \"barcode\": \"TEHD452\",\r\n            \"ean\": \"HDHA446\",\r\n            \"upc\": \"DDUIS789\",\r\n            \"hsCode\": \"DHD9888\",\r\n            \"midCode\": \"DHD77894\",\r\n            \"weight\": \"130kg\",\r\n            \"length\": \"2 feet\",\r\n            \"height\": \"1 feet\",\r\n            \"width\": \"2 feet\",\r\n            \"size\": \"S\",\r\n            \"color\": \"White\",\r\n            \"buyingPrice\": \"35\",\r\n            \"sellingPrice\": \"45\"\r\n        },\r\n        {\r\n            \"sku\": \"SKU1987\",\r\n            \"barcode\": \"TEHD987\",\r\n            \"ean\": \"HDHA987\",\r\n            \"upc\": \"DDUIS987\",\r\n            \"hsCode\": \"DHD9987\",\r\n            \"midCode\": \"DHD77987\",\r\n            \"weight\": \"140kg\",\r\n            \"length\": \"3 feet\",\r\n            \"height\": \"2 feet\",\r\n            \"width\": \"3 feet\",\r\n            \"size\": \"L\",\r\n            \"color\": \"Black\",\r\n            \"buyingPrice\": \"40\",\r\n            \"sellingPrice\": \"50\"\r\n        },\r\n        {\r\n            \"sku\": \"SKU1236\",\r\n            \"barcode\": \"TEHD236\",\r\n            \"ean\": \"HDHA236\",\r\n            \"upc\": \"DDUIS236\",\r\n            \"hsCode\": \"DHD9236\",\r\n            \"midCode\": \"DHD77236\",\r\n            \"weight\": \"150kg\",\r\n            \"length\": \"3.5 feet\",\r\n            \"height\": \"1.5 feet\",\r\n            \"width\": \"2.5 feet\",\r\n            \"size\": \"XL\",\r\n            \"color\": \"Red\",\r\n            \"buyingPrice\": \"55\",\r\n            \"sellingPrice\": \"65\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Product 1 updated\",\r\n    \"subTitle\": \"Product 1 sub title updated\",\r\n    \"description\": \"Description 1 udpated\",\r\n    \"status\": \"published\",\r\n    \"thumbnail\": \"https://aws.s3.image1-update.jpg\",\r\n    \"originCountry\": \"Canada\",\r\n    \"material\": \"Platinum\",\r\n    \"categoryId\": 1,\r\n    \"subCategoryId\": 2,\r\n    \"images\": [\"https://aws.s3.image3.jpg\", \"https://aws.s3.image4.jpg\", \"https://aws.s3.image5.jpg\"],\r\n    \"variant\": [\r\n        {\r\n            \"sku\": \"SKU12345\",\r\n            \"barcode\": \"TEHD4523\",\r\n            \"ean\": \"HDHA4467\",\r\n            \"upc\": \"DDUIS7890\",\r\n            \"hsCode\": \"DHD98889\",\r\n            \"midCode\": \"DHD778945\",\r\n            \"weight\": \"135kg\",\r\n            \"length\": \"2.5 feet\",\r\n            \"height\": \"1.5 feet\",\r\n            \"width\": \"2.5 feet\",\r\n            \"size\": \"M\",\r\n            \"color\": \"Yellow\",\r\n            \"buyingPrice\": \"40\",\r\n            \"sellingPrice\": \"50\"\r\n        },\r\n        {\r\n            \"sku\": \"SKU19878\",\r\n            \"barcode\": \"TEHD9878\",\r\n            \"ean\": \"HDHA9878\",\r\n            \"upc\": \"DDUIS9878\",\r\n            \"hsCode\": \"DHD99878\",\r\n            \"midCode\": \"DHD779878\",\r\n            \"weight\": \"145kg\",\r\n            \"length\": \"3.5 feet\",\r\n            \"height\": \"2.5 feet\",\r\n            \"width\": \"3.5 feet\",\r\n            \"size\": \"XL\",\r\n            \"color\": \"Green\",\r\n            \"buyingPrice\": \"45\",\r\n            \"sellingPrice\": \"55\"\r\n        },\r\n        {\r\n            \"sku\": \"SKU12367\",\r\n            \"barcode\": \"TEHD2367\",\r\n            \"ean\": \"HDHA2367\",\r\n            \"upc\": \"DDUIS2367\",\r\n            \"hsCode\": \"DHD92367\",\r\n            \"midCode\": \"DHD772367\",\r\n            \"weight\": \"155kg\",\r\n            \"length\": \"4 feet\",\r\n            \"height\": \"4 feet\",\r\n            \"width\": \"4 feet\",\r\n            \"size\": \"XXL\",\r\n            \"color\": \"Blue\",\r\n            \"buyingPrice\": \"60\",\r\n            \"sellingPrice\": \"65\"\r\n        },\r\n        {\r\n            \"sku\": \"SKU12365\",\r\n            \"barcode\": \"TEHD2365\",\r\n            \"ean\": \"HDHA2365\",\r\n            \"upc\": \"DDUIS2365\",\r\n            \"hsCode\": \"DHD92365\",\r\n            \"midCode\": \"DHD772365\",\r\n            \"weight\": \"130kg\",\r\n            \"length\": \"2 feet\",\r\n            \"height\": \"2 feet\",\r\n            \"width\": \"2 feet\",\r\n            \"size\": \"S\",\r\n            \"color\": \"White\",\r\n            \"buyingPrice\": \"30\",\r\n            \"sellingPrice\": \"30\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-best-deal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/best-deal",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"best-deal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-lang-id",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 34,\r\n    \"status\": \"published\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/product-status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"product-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/products/33",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"33"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vendor-product",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 5,\r\n    \"all\": true,\r\n    // \"q\": \"John Doe\",\r\n    // \"verified\": true,\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/vendor-products/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vendor-products",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "public-list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"page\": 2,\r\n    \"limit\": 5,\r\n    \"all\": true,\r\n    // \"q\": \"Mike\",,\r\n    \"productId\": 31,\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/vendor-products/public-list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vendor-products",
+								"public-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vendor-products/34",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vendor-products",
+								"34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "public-detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vendor-products/public/6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vendor-products",
+								"public",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"productId\": 34,\r\n   \"discountPercentage\": 6,\r\n    \"variant\": [\r\n        {\r\n            \"sku\": \"SKU1234\",\r\n            \"barcode\": \"TEHD452\",\r\n            \"ean\": \"HDHA446\",\r\n            \"upc\": \"DDUIS789\",\r\n            \"hsCode\": \"DHD9888\",\r\n            \"midCode\": \"DHD77894\",\r\n            \"weight\": \"130kg\",\r\n            \"length\": \"2 feet\",\r\n            \"height\": \"1 feet\",\r\n            \"width\": \"2 feet\",\r\n            \"size\": \"S\",\r\n            \"color\": \"White\",\r\n            \"sellingPrice\": 45,\r\n            \"quantity\": 15,\r\n            \"buyingPrice\": 35\r\n        },\r\n        {\r\n            \"sku\": \"SKU1987\",\r\n            \"barcode\": \"TEHD987\",\r\n            \"ean\": \"HDHA987\",\r\n            \"upc\": \"DDUIS987\",\r\n            \"hsCode\": \"DHD9987\",\r\n            \"midCode\": \"DHD77987\",\r\n            \"weight\": \"140kg\",\r\n            \"length\": \"3 feet\",\r\n            \"height\": \"2 feet\",\r\n            \"width\": \"3 feet\",\r\n            \"size\": \"L\",\r\n            \"color\": \"Black\",\r\n            \"sellingPrice\": 50,\r\n            \"quantity\": 20,\r\n            \"buyingPrice\": 40\r\n        },\r\n        {\r\n            \"sku\": \"SKU1236\",\r\n            \"barcode\": \"TEHD236\",\r\n            \"ean\": \"HDHA236\",\r\n            \"upc\": \"DDUIS236\",\r\n            \"hsCode\": \"DHD9236\",\r\n            \"midCode\": \"DHD77236\",\r\n            \"weight\": \"150kg\",\r\n            \"length\": \"3.5 feet\",\r\n            \"height\": \"1.5 feet\",\r\n            \"width\": \"2.5 feet\",\r\n            \"size\": \"XL\",\r\n            \"color\": \"Red\",\r\n            \"sellingPrice\": 65,\r\n            \"quantity\": 0,\r\n            \"buyingPrice\": 55\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/vendor-products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vendor-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"productId\": 1,\r\n   \"discountPercentage\": 4,\r\n    \"variant\": [\r\n        {\r\n            \"sku\": \"SKU1234\",\r\n            \"barcode\": \"TEHD452\",\r\n            \"ean\": \"HDHA446\",\r\n            \"upc\": \"DDUIS789\",\r\n            \"hsCode\": \"DHD9888\",\r\n            \"midCode\": \"DHD77894\",\r\n            \"weight\": \"130kg\",\r\n            \"length\": \"2 feet\",\r\n            \"height\": \"1 feet\",\r\n            \"width\": \"2 feet\",\r\n            \"size\": \"S\",\r\n            \"color\": \"White\",\r\n            \"buyingPrice\": \"35\",\r\n            \"sellingPrice\": \"45\",\r\n            \"quantity\": 15\r\n        },\r\n        {\r\n            \"sku\": \"SKU1987\",\r\n            \"barcode\": \"TEHD987\",\r\n            \"ean\": \"HDHA987\",\r\n            \"upc\": \"DDUIS987\",\r\n            \"hsCode\": \"DHD9987\",\r\n            \"midCode\": \"DHD77987\",\r\n            \"weight\": \"140kg\",\r\n            \"length\": \"3 feet\",\r\n            \"height\": \"2 feet\",\r\n            \"width\": \"3 feet\",\r\n            \"size\": \"L\",\r\n            \"color\": \"Black\",\r\n            \"buyingPrice\": \"40\",\r\n            \"sellingPrice\": \"50\",\r\n            \"quantity\": 15\r\n        },\r\n        {\r\n            \"sku\": \"SKU1236\",\r\n            \"barcode\": \"TEHD236\",\r\n            \"ean\": \"HDHA236\",\r\n            \"upc\": \"DDUIS236\",\r\n            \"hsCode\": \"DHD9236\",\r\n            \"midCode\": \"DHD77236\",\r\n            \"weight\": \"150kg\",\r\n            \"length\": \"3.5 feet\",\r\n            \"height\": \"1.5 feet\",\r\n            \"width\": \"2.5 feet\",\r\n            \"size\": \"XL\",\r\n            \"color\": \"Red\",\r\n            \"buyingPrice\": \"55\",\r\n            \"sellingPrice\": \"65\",\r\n            \"quantity\": 15\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/vendor-products/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vendor-products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-lang-id",
+								"value": "jp",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/vendor-products/product-status/11",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vendor-products",
+								"product-status",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/vendor-products/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vendor-products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 2,\r\n    \"all\": true,\r\n    // \"q\": \"Carrier Elite\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/carts/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carts",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"variantId\": 26,\r\n    \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/carts/item",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carts",
+								"item"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/carts/7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carts",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contact",
+			"item": [
+				{
+					"name": "contact-us",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jahid\",\r\n    \"lastName\": \"Hiron\",\r\n    \"email\": \"hironse.96@gmail.com\",\r\n    \"phone\": \"01940660150\",\r\n    \"message\": \"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/contact-us",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contact-us"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subscription",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3,\r\n    // \"all\": true,\r\n    // \"q\": \"namehiron.96@gmail.com\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hironse.96@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/subscriptions/16",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"subscriptions",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "adress",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3,\r\n    // \"all\": true,\r\n    // \"q\": \"Z/28, Zakir Hossain Road, Lalmatia\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/addresses/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"addresses",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"01748028585\",\r\n    \"address\": \"Z/28, Zakir Hossain Road, Lalmatia\",\r\n    \"city\": \"Dhaka\",\r\n    \"state\": \"Dhaka\",\r\n    \"zipCode\": \"1207\",\r\n    \"company\": \"Tech Symbio\",\r\n    \"apartment\": \"4th floor, north\",\r\n    \"country\": \"Bangladesh\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/addresses",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"01748028589\",\r\n    \"address\": \"Z/28, Zakir Hossain Road, Lalmatia u\",\r\n    \"city\": \"Dhaka u\",\r\n    \"state\": \"Dhaka u\",\r\n    \"zipCode\": \"12075\",\r\n    \"company\": \"Tech Symbio u\",\r\n    \"apartment\": \"4th floor, north u\",\r\n    \"country\": \"Bangladeshu\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/addresses/5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"addresses",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/addresses/6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"addresses",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tax",
+			"item": [
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/taxes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"taxes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"percentage\": 13\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/taxes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"taxes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shipping-method",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3\r\n    \"all\": true,\r\n    \"q\": \"standard\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/shipping-methods/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shipping-methods",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3\r\n    \"all\": true,\r\n    \"q\": \"standard\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/shipping-methods/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shipping-methods",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Express\",\r\n    \"cost\": 15,\r\n    \"estimatedDelivery\": 2,\r\n    \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/shipping-methods",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shipping-methods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Express 3 updated\",\r\n    \"cost\": 14,\r\n    \"estimatedDelivery\": 1,\r\n    \"description\": \"Updated Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/shipping-methods/4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shipping-methods",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/shipping-methods/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"shipping-methods",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coupon",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3\r\n    \"all\": true,\r\n    \"q\": \"Festival\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/coupons/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"coupons",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3\r\n    \"all\": true,\r\n    \"q\": \"standard\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/coupons/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"coupons",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "apply-coupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"products\": [1],\r\n    \"couponCode\": \"IT5ZJDTU\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/coupons/apply-coupon",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"coupons",
+								"apply-coupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Festival 3\",\r\n    \"percentage\": 5,\r\n    \"expiredAt\": \"2024-11-15T00:00:00.000Z\",\r\n    \"applicableProducts\": [1, 2, 3]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/coupons",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"coupons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Festival 2 updated\",\r\n    \"percentage\": 5,\r\n    \"expiredAt\": \"2024-11-15T00:00:00.000Z\",\r\n    \"applicableProducts\": [4, 5, 6]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/coupons/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"coupons",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/coupons/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"coupons",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3\r\n    \"all\": true,\r\n    // \"q\": \"Festival\",\r\n    // \"status\": \"active\",\r\n    // \"customerId\": 4,\r\n    // \"productId\": 1,\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reviews/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reviews",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "public-list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3\r\n    \"all\": true,\r\n    // \"q\": \"Festival\",\r\n    // \"productId\": 1,\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reviews/public-list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reviews",
+								"public-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3\r\n    \"all\": true,\r\n    \"q\": \"standard\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reviews/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"review\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard\",\r\n    \"rating\": 0.6,\r\n    \"productId\": 1,\r\n    \"fileUrl\": \"http://localhost:8003/uploads/products/product-1.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reviews",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reviews/status/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reviews",
+								"status",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"review\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 1 updated\",\r\n    \"rating\": 4.5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/reviews/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reviews",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/reviews/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"reviews",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3\r\n    // \"all\": true,\r\n    // \"name\": \"Customer One\",\r\n    // \"q\": \"Product One\",\r\n    \"status\": \"ordered\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders/list",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3\r\n    \"all\": true,\r\n    \"q\": \"standard\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\": {\r\n        \"address\": \"Z/28, Block 2, Road 2 Dhanmondi\",\r\n        \"apartment\": \"\",\r\n        \"phone\": \"01948028582\",\r\n        \"city\": \"Dhaka\",\r\n        \"zipCode\": \"1205\",\r\n        \"state\": \"Dhaka\",\r\n        \"company\": \"Cefalo \"\r\n    },\r\n    \"shippingMethod\": {\r\n        \"id\": 1,\r\n        \"name\": \"Standard\",\r\n        \"cost\": 10,\r\n        \"estimatedDelivery\": 7,\r\n        \"description\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\",\r\n        \"createdBy\": 1,\r\n        \"updatedBy\": 1,\r\n        \"createdAt\": \"2024-11-07T12:05:13.717Z\",\r\n        \"updatedAt\": \"2024-11-07T12:05:13.717Z\"\r\n    },\r\n    \"tax\": 8,\r\n    \"total\": 1800.144,\r\n    \"subTotal\": 1666.8,\r\n    \"shippingCharge\": 15,\r\n    \"variants\": [\r\n        {\r\n            \"id\": 1,\r\n            \"userId\": 4,\r\n            \"vendorProductId\": 1,\r\n            \"vendorVariantId\": 1,\r\n            \"quantity\": 3,\r\n            \"createdAt\": \"2024-11-12T19:27:20.252Z\",\r\n            \"updatedAt\": \"2024-11-12T19:27:20.252Z\",\r\n            \"vendorProduct\": {\r\n                \"id\": 1,\r\n                \"verified\": true,\r\n                \"discountPercentage\": 5,\r\n                \"productId\": 1,\r\n                \"createdBy\": 2,\r\n                \"updatedBy\": 1,\r\n                \"createdAt\": \"2024-11-12T19:27:20.241Z\",\r\n                \"updatedAt\": \"2024-11-12T19:27:20.241Z\",\r\n                \"product\": {\r\n                    \"id\": 1,\r\n                    \"title\": \"Lennox Elite Series Air Conditioner\",\r\n                    \"thumbnail\": \"http://localhost:8003/uploads/products/product-1.jpg\",\r\n                    \"slug\": \"lennox-elite-series-ac\"\r\n                }\r\n            },\r\n            \"vendorVariant\": {\r\n                \"id\": 1,\r\n                \"size\": \"S\",\r\n                \"color\": \"White\",\r\n                \"weight\": \"20kg\",\r\n                \"length\": \"2\\\"\",\r\n                \"height\": \"1.5\\\"\",\r\n                \"width\": \"1.5\\\"\",\r\n                \"sku\": \"SKU-57014\",\r\n                \"midCode\": \"MID-22630\",\r\n                \"sellingPrice\": 300\r\n            }\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"userId\": 4,\r\n            \"vendorProductId\": 2,\r\n            \"vendorVariantId\": 5,\r\n            \"quantity\": 2,\r\n            \"createdAt\": \"2024-11-12T19:27:20.252Z\",\r\n            \"updatedAt\": \"2024-11-12T19:27:20.252Z\",\r\n            \"vendorProduct\": {\r\n                \"id\": 2,\r\n                \"verified\": true,\r\n                \"discountPercentage\": 7,\r\n                \"productId\": 2,\r\n                \"createdBy\": 2,\r\n                \"updatedBy\": 1,\r\n                \"createdAt\": \"2024-11-12T19:27:20.241Z\",\r\n                \"updatedAt\": \"2024-11-12T19:27:20.241Z\",\r\n                \"product\": {\r\n                    \"id\": 2,\r\n                    \"title\": \"Lennox Elite Series Air Conditioner 2\",\r\n                    \"thumbnail\": \"http://localhost:8003/uploads/products/product-4.jpg\",\r\n                    \"slug\": \"lennox-elite-series-ac-2\"\r\n                }\r\n            },\r\n            \"vendorVariant\": {\r\n                \"id\": 5,\r\n                \"size\": \"S\",\r\n                \"color\": \"White\",\r\n                \"weight\": \"30kg\",\r\n                \"length\": \"3\\\"\",\r\n                \"height\": \"2.5\\\"\",\r\n                \"width\": \"2.5\\\"\",\r\n                \"sku\": \"SKU-71096\",\r\n                \"midCode\": \"MID-28802\",\r\n                \"sellingPrice\": 315\r\n            }\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"userId\": 4,\r\n            \"vendorProductId\": 6,\r\n            \"vendorVariantId\": 16,\r\n            \"quantity\": 1,\r\n            \"createdAt\": \"2024-11-12T19:27:20.252Z\",\r\n            \"updatedAt\": \"2024-11-12T19:27:20.252Z\",\r\n            \"vendorProduct\": {\r\n                \"id\": 6,\r\n                \"verified\": true,\r\n                \"discountPercentage\": 5,\r\n                \"productId\": 1,\r\n                \"createdBy\": 3,\r\n                \"updatedBy\": 1,\r\n                \"createdAt\": \"2024-11-12T19:27:20.241Z\",\r\n                \"updatedAt\": \"2024-11-12T19:27:20.241Z\",\r\n                \"product\": {\r\n                    \"id\": 1,\r\n                    \"title\": \"Lennox Elite Series Air Conditioner\",\r\n                    \"thumbnail\": \"http://localhost:8003/uploads/products/product-1.jpg\",\r\n                    \"slug\": \"lennox-elite-series-ac\"\r\n                }\r\n            },\r\n            \"vendorVariant\": {\r\n                \"id\": 16,\r\n                \"size\": \"S\",\r\n                \"color\": \"Green\",\r\n                \"weight\": \"20kg\",\r\n                \"length\": \"2\\\"\",\r\n                \"height\": \"1.5\\\"\",\r\n                \"width\": \"1.5\\\"\",\r\n                \"sku\": \"SKU-42710\",\r\n                \"midCode\": \"MID-77057\",\r\n                \"sellingPrice\": 300\r\n            }\r\n        }\r\n    ],\r\n    \"billingAddress\": {\r\n        \"address\": \"fghfd\",\r\n        \"apartment\": \"ghdfgh\",\r\n        \"phone\": \"346346346\",\r\n        \"city\": \"dfhgd\",\r\n        \"zipCode\": \"456\",\r\n        \"state\": \"fghdfh\",\r\n        \"company\": \"hdfghd\"\r\n    },\r\n    \"paymentInfo\": {\r\n        \"id\": \"pi_3QIbyFKy44uGAkx329Yyj6bR\",\r\n        \"amount\": 180100,\r\n        \"currency\": \"usd\",\r\n        \"method\": \"card\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Express 3 updated\",\r\n    \"cost\": 14,\r\n    \"estimatedDelivery\": 1,\r\n    \"description\": \"Updated Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders/4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"cancel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders/status/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"status",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "setting",
+			"item": [
+				{
+					"name": "detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"page\": 2,\r\n    // \"limit\": 3\r\n    \"all\": true,\r\n    \"q\": \"standard\",\r\n    \"sort\": [\r\n        {\r\n            \"whom\": \"updatedAt\",\r\n            \"order\": \"desc\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/settings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"upFrontPay\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/settings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
